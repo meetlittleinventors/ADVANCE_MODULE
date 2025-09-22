@@ -226,3 +226,51 @@ public class StudentManagementSystem extends Application {
         alert.showAndWait();
     }
 }
+
+
+// Student Class (JavaFX Properties for TableView)
+import javafx.beans.property.*;
+
+public class Student {
+    private IntegerProperty id;
+    private StringProperty name;
+    private IntegerProperty age;
+    private StringProperty grade;
+    private StringProperty email;
+
+    public Student(int id, String name, int age, String grade, String email) {
+        this.id = new SimpleIntegerProperty(id);
+        this.name = new SimpleStringProperty(name);
+        this.age = new SimpleIntegerProperty(age);
+        this.grade = new SimpleStringProperty(grade);
+        this.email = new SimpleStringProperty(email);
+    }
+
+    // Getters and setters
+    public int getId() { return id.get(); }
+    public void setId(int id) { this.id.set(id); }
+    public IntegerProperty idProperty() { return id; }
+
+    public String getName() { return name.get(); }
+    public void setName(String name) { this.name.set(name); }
+    public StringProperty nameProperty() { return name; }
+
+    public int getAge() { return age.get(); }
+    public void setAge(int age) { this.age.set(age); }
+    public IntegerProperty ageProperty() { return age; }
+
+    public String getGrade() { return grade.get(); }
+    public void setGrade(String grade) { this.grade.set(grade); }
+    public StringProperty gradeProperty() { return grade; }
+
+    public String getEmail() { return email.get(); }
+    public void setEmail(String email) { this.email.set(email); }
+    public StringProperty emailProperty() { return email; }
+
+    @Override
+    public String toString() {
+        return "ID: " + getId() + "\nName: " + getName() + "\nAge: " + getAge() +
+                "\nGrade: " + getGrade() + "\nEmail: " + getEmail();
+    }
+}
+
